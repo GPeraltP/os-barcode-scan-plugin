@@ -10,7 +10,7 @@
 				<param name="android-package" value="cordova.plugin.barcodescan.BarcodeScan" />
 			</feature>
 		</config-file>
-		<source-file src="src/android/BarcodeScanPlugin.java" target-dir="src/cordova.plugin.barcodescan/BarcodeScan" />
+		<source-file src="src/android/BarcodeScan.java" target-dir="src/cordova.plugin.barcodescan/BarcodeScan" />
         <framework src="src/android/res/build-extra.gradle" custom="true" type="gradleReference" />
 	</platform>
 </plugin>
