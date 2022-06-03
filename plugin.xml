@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="os-barcode-scan-plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>BarcodeScan</name>
+	<js-module name="BarcodeScan" src="www/barcodescanplugin.js">
+		<clobbers target="cordova.plugins.BarcodeScan" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="BarcodeScan">
+				<param name="android-package" value="cordova.plugin.barcodescan.BarcodeScan" />
+			</feature>
+		</config-file>
+		<source-file src="src/android/BarcodeScanPlugin.java" target-dir="src/cordova.plugin.barcodescan/BarcodeScan" />
+        <framework src="src/android/res/build-extra.gradle" custom="true" type="gradleReference" />
+	</platform>
+</plugin>

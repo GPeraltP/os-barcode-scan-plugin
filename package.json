@@ -1,0 +1,23 @@
+
+{
+    "name": "os-barcode-scan-plugin",
+    "version": "0.0.1",
+    "description": "Barcode Scan Plugin",
+    "cordova": {
+      "id": "os-barcode-scan-plugin",
+      "platforms": []
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/GPeraltP/os-barcode-scan-plugin.git"
+    },
+    "keywords": [
+      "ecosystem:cordova"
+    ],
+    "author": "Gerson Peralta",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/GPeraltP/os-barcode-scan-plugin/issues"
+    },
+    "homepage": "https://github.com/GPeraltP/os-barcode-scan-plugin.git"
+  }
