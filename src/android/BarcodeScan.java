@@ -38,7 +38,7 @@ import android.widget.Toast;
 import com.google.zxing.client.android.Intents;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
-import com.mikepenz.aboutlibraries.LibsBuilder;
+//import com.mikepenz.aboutlibraries.LibsBuilder;
 
 import androidx.core.app.ActivityCompat;
 import androidx.activity.result.ActivityResultLauncher;
@@ -57,7 +57,6 @@ public class BarcodeScan extends CordovaPlugin {
     private static final String ACTION_GET_BARCODE_SCAN = "getBarcodeScan";
 
     private CallbackContext newCallbackContext = null;
-    private Activity activity;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -67,14 +66,14 @@ public class BarcodeScan extends CordovaPlugin {
 
             activity.runOnUiThread(new Runnable(){
                 public void run(){
-                    private final ActivityResultLauncher<ScanOptions> barcodeLauncher = registerForActivityResult(new ScanContract(),
+                    final ActivityResultLauncher<ScanOptions> barcodeLauncher = registerForActivityResult(new ScanContract(),
                     result -> {
                         if(result.getContents() == null) {
-                            Toast.makeText(MyActivity.this, "Cancelled", Toast.LENGTH_LONG).show();
+                            Toast.makeText(cordova.getActivity(), "Cancelled", Toast.LENGTH_LONG).show();
                             newCallbackContext.sendPluginResult(pluginResultOK);
                             return true;
                         } else {
-                            Toast.makeText(MyActivity.this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(cordova.getActivity(), "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                             newCallbackContext.sendPluginResult(pluginResultOK);
                             return true;
                         }
