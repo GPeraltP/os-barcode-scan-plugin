@@ -1,0 +1,1 @@
+# os-barcode-scan-plugin
